@@ -1,0 +1,2 @@
+# HELPU-
+HELP-U is an Online Home Services project deals with an online system designed for booking serviceman (electrician, Salon Experts, plumber, Beautician etc.) as per the requirement of the customer at their convenience. This software helps user to find serviceman profile and contact them or either click on direct hiring now button. After clicking on hire now button, user have to contact the respective serviceman.
