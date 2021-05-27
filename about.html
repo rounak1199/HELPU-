@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            width: 90%;
+            margin: auto;
+        }
+
+        .right-nav ul li a:hover {
+            border-bottom: 2px solid rgb(7, 121, 83);
+            color: rgb(7, 121, 83);
+        }
+
+        /*! navigation menu*/
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 90%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 8vh;
+            background: linear-gradient(to right, #4aecbb, rgb(233, 233, 88));
+            font-family: "Montserrat", sans-serif;
+            z-index: 2;
+        }
+
+        .logo {
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            width: 30%;
+        }
+
+        .nav-links li {
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-weight: bold;
+            font-size: 14px;
+            padding-bottom: 5px;
+        }
+
+        .burger {
+            display: none;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            border-bottom: 2px solid rgb(7, 121, 83);
+            /* transition: ease-out 0.5s; */
+        }
+
+        .about-width h2 {
+            padding-top: 40px;
+            padding-bottom: 20px;
+            font-weight: lighter;
+            text-align: center;
+        }
+
+        /* .grid-vals {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            width: 85%;
+            margin: auto;
+            padding-bottom: 5em;
+        } */
+
+        .grid-about-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-bottom: 100px;
+            width: 85%;
+            margin: auto;
+        }
+
+        .grid-about-images-two {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-bottom: 100px;
+            width: 85%;
+            margin: auto;
+        }
+
+        .inline-parts {
+            display: flex;
+        }
+
+        .inline-parts h2 {
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .grid-details {
+            width: 100%;
+            margin: auto;
+        }
+
+        .grid-details p {
+            font-size: 15px;
+            font-weight: lighter;
+            color: #9b9b9b;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .orange-btn {
+            background: #ec823a;
+            color: white;
+            padding: 10px 10px;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .image {
+            opacity: 1;
+            display: block;
+            height: auto;
+            margin-bottom: 20px;
+            transition: 0.5s ease;
+            backface-visibility: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 50%;
+            z-index: 1;
+        }
+
+        .middle {
+            transition: 0.5s ease;
+            opacity: 0;
+            position: absolute;
+            left: 90px;
+            bottom: 120px;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container:hover .image {
+            opacity: 0.8;
+            background: #ec823a;
+            cursor: pointer;
+        }
+
+        .container:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            color: black;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .text i {
+            background: #323232;
+            color: white;
+            font-size: 22px;
+            margin-left: 20px;
+            padding: 10px;
+        }
+
+        .text i:hover {
+            background: #ec823a;
+            transition: 0.5s ease;
+        }
+
+        .names {
+            align-items: center;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header of links -->
+    <header class="menu">
+        <div class="left-nav">
+            <i class="fas fa-poll"></i>
+            <a href="/HTML/studio.html"> Service Provider</a></i>
+        </div>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-poll"></i>
+                <h4>Service Provider</h4>
+            </div>
+            <ul class="nav-links">
+                <li><a href="welcome.php">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="welcome.php">Services</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ! About section of hover images starts from here-->
+
+    <section class="about-images">
+        <div class="about-width">
+            <h2>MEET OUR TEAM</h2>
+        </div>
+        <div class="grid-about-images">
+            <div class="container">
+                <img src="akash.png" class="image" alt="" />
+                <div class="names">
+                    <p style="color: #ec823a;">Tomar Akash Singh</p>
+                    <p>Senior Developer</p>
+                </div>
+                <div class="middle">
+                    <div class="text">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="www.github.com"><i class="fab fa-github"></i></a>
+                        <a href="https://in.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <img src="rounak.png" class="image" alt="" />
+                <div class="names">
+                    <p style="color: #ec823a;">Rounak Kumar</p>
+                    <p>CEO</p>
+                </div>
+                <div class="middle">
+                    <div class="text">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="www.github.com"><i class="fab fa-github"></i></a>
+                        <a href="https://in.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <img src="robini.png" class="image" alt="" />
+                <div class="names">
+                    <p style="color: #ec823a;">Rohini Kumari</p>
+                    <p>Frontend Developer</p>
+                </div>
+                <div class="middle">
+                    <div class="text">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="www.github.com"><i class="fab fa-github"></i></a>
+                        <a href="https://in.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid-about-images-two">
+            <div class="container">
+                <img src="saloniii.png" class="image" alt="" />
+                <div class="names">
+                    <p style="color: #ec823a;">Saloni Shukla</p>
+                    <p>Manager and Testing team head</p>
+                </div>
+                <div class="middle">
+                    <div class="text">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="www.github.com"><i class="fab fa-github"></i></a>
+                        <a href="https://in.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <img src="" class="image" alt="" />
+                <div class="names">
+                    <p style="color: #ec823a;"></p>
+                    <p></p>
+                </div>
+                <div class="middle">
+                    <div class="text">
+                        <!-- <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="www.github.com"><i class="fab fa-github"></i></a>
+                        <a href="https://in.linkedin.com"><i class="fab fa-linkedin-in"></i></a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <img src="muaz.png" class="image" alt="" />
+                <div class="names">
+                    <p style="color: #ec823a;">Muazzam Sayyed</p>
+                    <p>Backend Developer</p>
+                </div>
+                <div class="middle">
+                    <div class="text">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="www.github.com"><i class="fab fa-github"></i></a>
+                        <a href="https://in.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h1>Office Address</h1>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60536.74236351501!2d73.83993022450929!3d18.504194729030665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2ea950f616219%3A0x321bdae2cea9f064!2sVishwakarma%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1620674377215!5m2!1sen!2sin"
+            width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+
+    <script src="welcome.js"></script>
+</body>
+
+</html>
